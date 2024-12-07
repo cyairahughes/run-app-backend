@@ -1,0 +1,7 @@
+DROP TABLE IF EXISTS Account;
+
+CREATE TABLE Account (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    username TEXT UNIQUE,
+    password TEXT NOT NULL
+);

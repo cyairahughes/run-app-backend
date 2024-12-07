@@ -1,0 +1,53 @@
+### Account Requests
+
+
+### Create Account
+POST {{account-service-url}}/signup
+Content-Type: application/json
+
+{
+  "username": "{{username}}",
+  "password": "{{password}}"
+}
+###
+
+
+### Login
+POST {{account-service-url}}/login
+Accept: application/json
+Content-Type: application/json
+
+{
+  "username": "{{username}}",
+  "password": "{{password}}"
+}
+> {% client.global.set("auth_token", response.body['token']); %}
+###
+
+
+### Change Password
+PUT {{account-service-url}}/changePassword
+Authorization: Bearer {{auth_token}}
+Content-Type: application/json
+
+{
+  "password": "{{password}}"
+}
+###
+
+
+### Change Username
+PUT {{account-service-url}}/changeUsername
+Authorization: Bearer {{auth_token}}
+Content-Type: application/json
+
+{
+  "username": "{{username}}"
+}
+###
+
+
+### Delete Account
+DELETE {{account-service-url}}/deleteAccount
+Authorization: Bearer {{auth_token}}
+###

@@ -1,0 +1,5 @@
+### GET request to example server
+GET {{user-service-url}}/?language=python
+Authorization: Bearer {{auth_token}}
+
+###
